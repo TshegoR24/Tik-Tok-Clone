@@ -1,0 +1,395 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --red: #ef233c;
+    --dark: #283618;
+    --hover-light:#f8f9fa;
+    --hover-red: rgba(239, 35, 60, 0.1);
+}
+
+body{
+    font-family: sans-serif;
+}
+
+/* NAVIGATION */
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    height: 8vh;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.nav__content{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo{
+    text-shadow: 1px 1px var(--red), -1px 1px #00bbf9;
+    font-size: 2rem;
+}
+
+form{
+    background-color: #eee;
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+form input{
+    width: 80%;
+    height: 70%;
+    background-color: transparent;
+    border: none;
+    border-right: solid 1px #aaa;
+    font-size: 18px;
+    outline: none;
+}
+
+form input::placeholder{
+    color: #aaa;
+}
+
+form .fa-search{
+    color: #aaa;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+nav .nav__btns{
+    position: relative;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__btns button{
+    height: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav__btns .login__btn{
+    background-color: var(--red);
+    padding: 0 35px;
+    margin: 0 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.dots__btn{
+    padding: 5px 0;
+}
+
+.dots__btn i{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.dots__btn:hover .dots__info{
+    display: flex;
+}
+
+.nav__btns .dots__info{
+    position: absolute;
+    bottom: -155px;
+    right: -30px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 10px 0 10px #ddd, -10px 0 10px #ddd;
+    border-radius: 10px;
+}
+
+.dots__info a{
+    font-size: 16px;
+    margin: 8px 0;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.dots__info a i{
+    margin-right: 10px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    position: fixed;
+    top: 8vh;
+    left: 20%;
+    width: 40%;
+    max-width: 650px;
+    height: 92vh;
+    padding-right: 10%;
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar .menu{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.sidebar .menu .menu__link{
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 20px;
+    padding: 10px 0;
+    font-weight: 700;
+}
+
+.sidebar .menu .menu__link:first-of-type{
+    color: var(--red);
+}
+
+.sidebar .menu .menu__link:hover{
+    background-color: #f8f9fa;
+}
+
+.menu__link i{
+    margin-right: 10px;
+}
+
+.login__area{
+    border-bottom: 1px solid #ddd;
+    border-top: solid 1px #ddd;
+    padding: 10px 0;
+}
+
+.login__area p{
+    color: #ddd;
+    font-size: 20px;
+    margin-bottom: 1rem;
+    line-height: 22px;
+}
+
+.login__area button{
+    border: solid 1px var(--red);
+    outline: none;
+    background-color: white;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red);
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.login__area button:hover{
+    background-color: var(--hover-red);
+}
+
+.suggested{
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.suggested h3,
+.discover h3{
+    color: #aaa;
+    font-weight: 500;
+}
+
+.suggested__container{
+    height: 440px;
+    overflow: hidden;
+}
+
+.suggested__container.expanded{
+    height: 650px;
+}
+
+.suggested__container .suggestion{
+    display: flex;
+    margin: 25px 0;
+    text-decoration: none;
+}
+
+.suggested .suggestion:hover{
+    background-color: var(--hover-light);
+}
+
+.suggestion .suggested__pic{
+    height: 45px;
+    width: 45px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.suggestion h3,
+.suggestion small{
+    color: var(--dark);
+}
+
+.suggested button{
+    border: none;
+    color: var(--red);
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin: 1rem 0;
+}
+
+.discover{
+    padding: 1rem 0;
+}
+
+.discover .discover__container{
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.discover__container a{
+    text-decoration: none;
+    color: #aaa;
+    border: #aaa 1px solid;
+    margin: 0 10px 10px 0;
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.discover__container a:hover{
+    background-color: var(--hover-light);
+}
+
+/* FEED */
+.feed{
+    width: 60%;
+    max-width: 750px;
+    height: 92vh;
+    padding: 1rem 0;
+    position: fixed;
+    overflow-y: scroll;
+    top: 8vh;
+    left: 45%;
+}
+
+.feed::-webkit-scrollbar{
+    display: none;
+}
+
+.post{
+    border-bottom: solid 1px #ddd;
+    padding: 1rem 0;
+}
+
+.post__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin-bottom: 1rem;
+}
+
+.post__top .profile__pic{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.post__top .post__info{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.post__info h2{
+    font-size: 20px;
+}
+
+.post__info small{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.post__info p{
+    margin-top: 5px;
+}
+
+.post__top button{
+    border: none;
+    width: 110px;
+    height: 30px;
+    color: var(--red);
+    background: transparent;
+    border: solid 2px var(--red);
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.post__top button:hover{
+    background-color: var(--hover-red);
+}
+
+.post__body{
+    display: flex;
+    position: relative;
+}
+
+.post__body video{
+    border-radius: 10px;
+    object-fit: fill;
+    margin-left: 65px;
+}
+
+.post__body .actions{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+.actions .action__icon{
+    font-size: 30px;
+    background-color: #eee;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.actions .action__icon:hover{
+    background-color: #ddd;
+}
