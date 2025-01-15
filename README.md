@@ -25,8 +25,7 @@ This is a basic clone of TikTok, built using **HTML** and **CSS**. The purpose o
 - Adding user interaction features like comments, likes, and shares
 - Incorporating JavaScript for dynamic content
 
-## License
-This project is open-source and available under the [MIT License](LICENSE).
+
 
 ---
 
